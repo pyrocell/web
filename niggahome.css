@@ -21,10 +21,19 @@ body {
   overflow-x: hidden;
 }
 
-.Section {
-  height: 100vh;
+html, body {
   width: 100%;
-  position: relative;
+  height: 100%;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch; 
+}
+
+.Section {
+  min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: visible;
+    padding: 20px 0;
 }
 
 .BackgroundImage {
@@ -42,10 +51,10 @@ body {
   mask-composite: intersect;
   opacity: 0;
   animation: FadeSlideTopRight 1.2s ease forwards;
+  -webkit-transform: translate3d(0,0,0);
 }
 
 .LeftSide {
-  height: 90vh;
   width: min(720px, 100%);
   padding: 15px;
   position: relative;
@@ -53,6 +62,8 @@ body {
   display: flex;
   flex-direction: column; 
   gap: 15px;
+  height: auto;
+  min-height: 100vh;
 }
 
 .MainLabelBox {
@@ -375,9 +386,18 @@ body {
 }
 
 #overview {
-  height: 100vh;
-  background-color: var(--background);
+  position: relative;
+  z-index: 2;
+  background-color: rgba(24, 26, 30, 0.95);
+  margin-top: 0; 
 }
+
+#home {
+  z-index: 1;
+  background-color: var(--background);
+  position: relative;
+}
+
 
 @keyframes FadeSlideUp {
   from {
@@ -407,13 +427,12 @@ body {
 }
 
 @media (max-width: 768px) {
-  #home {
-    min-height: 150vh;
-  }
 
-  .LeftSide {
-    padding: 15px;
-  }
+
+.LeftSide {
+  height: auto;
+  min-height: 100vh;
+}
   
   .CountdownTimer {
     flex-wrap: wrap;
@@ -427,6 +446,8 @@ body {
     flex-direction: column;
     gap: 20px;
   }
+
+
 }
 
 

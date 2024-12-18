@@ -1,4 +1,11 @@
-.TechnologySection {
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch; /* iOS smooth scroll */
+}
+
+  .TechnologySection {
     padding: 40px 20px;
     max-width: 1200px;
     margin: 0 auto;
